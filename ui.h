@@ -28,6 +28,7 @@ namespace ui {
 		virtual ElementType GetType() const = 0;
 
 		virtual void Render() {};
+		virtual bool CollisionTest(const vec2&) {return false;}
 
 		virtual void OnClick(uint button) {};
 		virtual void OnDrag(const vec2&) {};
@@ -41,6 +42,7 @@ namespace ui {
 		Panel(const vec2& pos, const vec2& size);
 		ElementType GetType() const override { return ElementType::Panel; }
 
+		bool CollisionTest(const vec2&) override;
 		void Render() override;
 		void OnDrag(const vec2&) override;
 	};

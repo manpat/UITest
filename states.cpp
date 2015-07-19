@@ -107,7 +107,7 @@ void Idle::Update() {
 void Click::Enter() {
 	debug::log("Click enter ", button);
 
-	if(button == 2){
+	if(button == 0){
 		auto mpos = Input::GetMousePosition()*App::GetAspectVec();
 		if(!(element = ui::GetElementAt(mpos))){
 			element = ui::CreatePanel(mpos, {0.2, 0.2});
